@@ -1,6 +1,6 @@
-﻿using EcommerceWeb.Data;
-using EcommerceWeb.Models;
+﻿using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
+using EcommerceWeb.Data;
 
 namespace EcommerceWeb.Controllers
 {
@@ -13,7 +13,7 @@ namespace EcommerceWeb.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Category> categories = _db.Categories;
+            IEnumerable<Category> categories = _db.Categories.ToList();
             return View(categories);
         }
 
